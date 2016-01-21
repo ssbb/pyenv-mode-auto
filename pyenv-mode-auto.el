@@ -6,6 +6,7 @@
 ;; URL: https://github.com/ssbb/pyenv-mode-auto
 ;; Keywords: python, pyenv
 ;; Version: 0.1.0
+;; Package-Requires: ((pyenv-mode nil) (s nil) (f nil))
 
 ;; This file is NOT part of GNU Emacs.
 
