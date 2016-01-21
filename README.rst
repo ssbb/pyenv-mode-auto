@@ -11,6 +11,13 @@ Installation
 
 You can simply install package from `Melpa <https://melpa.org/>`_.
 
+.. code-block:: lisp
+
+   (add-to-list 'package-archives
+          '("melpa" . "http://melpa.org/packages/") t)
+
+And then :kbd:`M-x package-install [RET] pyenv-mode-auto [RET]`
+
 Usage
 =====
 
