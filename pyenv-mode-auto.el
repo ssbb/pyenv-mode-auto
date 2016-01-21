@@ -45,6 +45,8 @@
 
 (add-hook 'find-file-hook 'pyenv-mode-auto-hook)
 
+(provide 'pyenv-mode-auto)
+
 ;; Local Variables:
 ;; indent-tabs-mode: nil
 ;; End:
