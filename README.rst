@@ -10,3 +10,8 @@ Installation
 ============
 
 You can simply install package from `Melpa <https://melpa.org/>`_.
+
+Usage
+=====
+
+Just open any file within you project (with ``.python-version`` file in the same directory or above) and you pyenv version will be activated.
