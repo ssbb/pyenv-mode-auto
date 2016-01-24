@@ -2,6 +2,9 @@
  pyenv-mode-auto
 =================
 
+.. image:: http://melpa.org/packages/pyenv-mode-auto-badge.svg
+   :target: http://melpa.org/#/pyenv-mode-auto
+
 Automatically activate pyenv version from Emacs with `pyenv-mode <https://github.com/proofit404/pyenv-mode>`_.
 
 It traverse directories up until ``.python-version`` file will be found and activates pyenv version defined there.
