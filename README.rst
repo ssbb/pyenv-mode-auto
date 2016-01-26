@@ -21,7 +21,11 @@ You can simply install package from `Melpa <https://melpa.org/>`_.
    (add-to-list 'package-archives
           '("melpa" . "http://melpa.org/packages/") t)
 
-And then :kbd:`M-x package-install [RET] pyenv-mode-auto [RET]`
+And then :kbd:`M-x package-install [RET] pyenv-mode-auto [RET]`. After Installing you should `require` this package:
+
+.. code-block:: lisp
+
+   (require 'pyenv-mode-auto)
 
 Usage
 =====
