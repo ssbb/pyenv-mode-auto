@@ -9,8 +9,6 @@ Automatically activate pyenv version from Emacs with `pyenv-mode <https://github
 
 It traverse directories up until ``.python-version`` file will be found and activates pyenv version defined there.
 
-Extracted from my blog post `Automatically activate pyenv version from Emacs <http://ssbb.me/posts/emacs-pyenv-auto-activation-en/>`_.
-
 Installation
 ============
 
