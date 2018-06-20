@@ -43,7 +43,7 @@
      (let ((pyenv-version-path (f-expand ".python-version" path)))
        (if (f-exists? pyenv-version-path)
            (progn
-             (pyenv-mode-set (s-trim (f-read-text pyenv-version-path 'utf-8)))
+             (pyenv-mode-set (car (s-lines (s-trim (f-read-text pyenv-version-path 'utf-8)))))
              t))))))
 
 (add-hook 'find-file-hook 'pyenv-mode-auto-hook)
