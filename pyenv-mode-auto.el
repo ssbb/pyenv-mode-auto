@@ -35,18 +35,22 @@
 (require 's)
 (require 'f)
 (require 'pyenv-mode)
+(require 'switch-buffer-functions)
 
-(defun pyenv-mode-auto-hook ()
-  "Automatically activates pyenv version if .python-version file exists."
-  (f-traverse-upwards
-   (lambda (path)
-     (let ((pyenv-version-path (f-expand ".python-version" path)))
-       (if (f-exists? pyenv-version-path)
-           (progn
-             (pyenv-mode-set (car (s-lines (s-trim (f-read-text pyenv-version-path 'utf-8)))))
-             t))))))
+(defun pyenv-mode-auto-hook (prev cur)
+  "Automatically activates pyenv version when changing buffer from PREV to CUR."
+  (let ((file-path '(buffer-file-name (cur))))
+    (unless (f-traverse-upwards
+             (lambda (file-path)
+               (let ((pyenv-version-path (f-expand ".python-version" file-path)))
+                 (if (f-exists? pyenv-version-path)
+                     (progn
+                       (pyenv-mode-set (car (s-lines (s-trim (f-read-text pyenv-version-path 'utf-8)))))
+                       t)))))
+      (pyenv-mode-unset)
+      )))
 
-(add-hook 'find-file-hook 'pyenv-mode-auto-hook)
+(add-hook 'switch-buffer-functions #'pyenv-mode-auto-hook)
 
 (provide 'pyenv-mode-auto)
 
